@@ -1,0 +1,1 @@
+# terraform-aws-route53-s3-redirect-domain
