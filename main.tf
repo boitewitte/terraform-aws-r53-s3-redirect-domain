@@ -7,11 +7,15 @@ module "label" {
 
   enabled = "${local.enabled}"
 
-  name = "${var.domain_name}"
+  name        = "${var.domain_name}"
+  namespace   = "${var.namespace}"
+  environment = "${var.environment}"
+  stage       = "${var.stage}"
+  delimiter   = "${var.delimiter}"
+  attributes  = ["${concat(var.attributes, list(var.redirect_hostname, "redirect"))}"]
+  tags        = "${var.tags}"
 
   context = "${var.context}"
-
-  attributes = ["${list(var.redirect_hostname, "redirect")}"]
 }
 
 data "aws_route53_zone" "domain" {

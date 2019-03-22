@@ -1,18 +1,60 @@
+variable "namespace" {
+  type        = "string"
+  default     = ""
+  description = "Namespace, which could be your organization name or abbreviation"
+}
+
+variable "environment" {
+  type        = "string"
+  default     = ""
+  description = "Environment, e.g. 'prod', 'staging', 'dev', 'pre-prod', 'UAT'"
+}
+
+variable "stage" {
+  type        = "string"
+  default     = ""
+  description = "Stage, e.g. 'prod', 'staging', 'dev', OR 'source', 'build', 'test', 'deploy', 'release'"
+}
+
+variable "enabled" {
+  type        = "string"
+  default     = "true"
+  description = "Set to false to prevent the module from creating any resources"
+}
+
+variable "delimiter" {
+  type        = "string"
+  default     = "-"
+  description = "Delimiter to be used between `namespace`, `environment`, `stage`, `name` and `attributes`"
+}
+
+variable "attributes" {
+  type        = "list"
+  default     = []
+  description = "Additional attributes (e.g. `1`)"
+}
+
+variable "tags" {
+  type        = "map"
+  default     = {}
+  description = "Additional tags (e.g. `map('BusinessUnit','XYZ')`"
+}
+
+variable "additional_tag_map" {
+  type        = "map"
+  default     = {}
+  description = "Additional tags for appending to each tag map"
+}
+
 variable "context" {
   type        = "map"
-  description = "Context for the label"
   default     = {}
+  description = "Default context to use for passing state between label invocations"
 }
 
 variable "domain_name" {
   type        = "string"
   description = "Domain name that needs to be redirected"
-}
-
-variable "enabled" {
-  description = "Set to false to prevent the module from creating any resources"
-
-  default = true
 }
 
 variable "redirect_hostname" {
