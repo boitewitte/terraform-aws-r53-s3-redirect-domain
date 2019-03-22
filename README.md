@@ -4,7 +4,7 @@ Terraform module that creates a Route53 record pointing to a S3 redirect bucket.
 
 ## Dependency
 
-Using [`terraform-null-label`](https://github.com/cloudposse/terraform-null-label) from `CloudPosse` for naming of bucket.
+Using [`terraform-null-label`](https://github.com/cloudposse/terraform-null-label) from [`CloudPosse`](https://github.com/cloudposse) for naming of bucket.
 
 
 ## Usage
