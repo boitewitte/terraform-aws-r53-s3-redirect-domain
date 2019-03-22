@@ -10,6 +10,7 @@ Terraform module that creates a Route53 record pointing to a S3 redirect bucket.
 module "label" {
   source = "git::https://github.com/cloudposse/terraform-null-label.git?ref=0.6.0"
 }
+
 module "redirect" {
   context = "${module.label.context}"
 

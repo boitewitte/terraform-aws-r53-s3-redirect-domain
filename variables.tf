@@ -4,7 +4,6 @@ variable "context" {
   default     = {}
 }
 
-
 variable "domain_name" {
   type        = "string"
   description = "Domain name that needs to be redirected"
@@ -25,5 +24,3 @@ variable "zone_name" {
   type        = "string"
   description = "Zone name for the domain_name"
 }
-
-
